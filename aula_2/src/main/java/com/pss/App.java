@@ -18,6 +18,13 @@ public final class App {
         double taxa = calculadora.calcular_taxa(pedido.get_endereco_entrega());
         System.out.println("Taxa de Entrega: R$" + taxa);
 
+        // Aplicando um desconto
+        GestorDeDescontos gestorDeDescontos = new GestorDeDescontos();
+        double desconto = gestorDeDescontos.aplicar_desconto(pedido, "DESC10");
+        System.out.println("Desconto aplicado: R$" + desconto);
+        double valorFinal = pedido.get_valor_total() - desconto;
+        System.out.println("Valor final com desconto: R$" + valorFinal);
+
         // Rastreando e atualizando o status do pedido
         RastreadorPedido rastreador = new RastreadorPedido(pedido);
         rastreador.atualizar_para_em_transito();
