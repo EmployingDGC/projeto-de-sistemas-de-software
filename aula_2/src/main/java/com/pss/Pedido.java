@@ -17,4 +17,8 @@ public class Pedido {
     public String get_endereco_entrega() {
         return this.endereco_entrega;
     }
+
+    public double get_valor_total() {
+        return this.valor_total;
+    }
 }
