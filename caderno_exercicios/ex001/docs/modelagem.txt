@@ -1,0 +1,55 @@
+class TipoItem {
+    atributes {
+        - id: int
+        - nome: String
+    }
+
+    methods {
+        + gets()
+    }
+}
+
+class Item {
+    atributes {
+        - id: int
+        - nome: String
+        - valor: double
+        - tipo: TipoItem
+    }
+
+    methods {
+        + gets()
+    }
+}
+
+class Pedido {
+    atributes {
+        - id: int
+        - valor: double
+        - itens: List<Item>
+        - data: LocalDate
+    }
+
+    methods {
+        + gets()
+    }
+}
+
+class Desconto {
+    atributes {
+        - id: int
+        - descricao: String
+        - porcentagem: int
+    }
+
+    methods {
+        + Desconto(descricao: String, porcentagem: int)
+        + gets()
+    }
+}
+
+interface AplicaDesconto {
+    methods {
+        + aplicar(Desconto, Pedido)
+    }
+}
