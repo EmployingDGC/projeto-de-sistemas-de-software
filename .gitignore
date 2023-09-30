@@ -1,6 +1,9 @@
 # IDE
 .vscode/
 
+# DrawIO
+*.drawio.*
+
 # Compiled class file
 *.class
 
